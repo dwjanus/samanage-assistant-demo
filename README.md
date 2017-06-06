@@ -1,2 +1,2 @@
-# samanage-assistant
-Google Assistant chat integration for Samanage Service Desk
+# Samanage Assistant - Demo
+A demo version of the Google Assistant chat integration for Samanage Service Desk
