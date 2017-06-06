@@ -1,7 +1,7 @@
 {
-  "name": "Samanage Assistant",
-  "description": "Samanage assistant integration that helps keep you updated on your incidents",
-  "repository": "https://github.com/SAManage/samanage-assistant",
+  "name": "Samanage Assistant Demo",
+  "description": "Demo version of the Samanage assistant integration that helps keep you updated on your incidents",
+  "repository": "https://github.com/dwjanus/samanage-assistant-demo",
   "logo": "https://s3-media2.fl.yelpcdn.com/bphoto/N4Xl3iEv5Xb0OUiqlEX9EQ/ls.jpg",
   "success_url": "/",
   "env": {

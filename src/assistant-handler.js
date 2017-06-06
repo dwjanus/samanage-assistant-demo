@@ -1,7 +1,6 @@
 import util from 'util'
 import _ from 'lodash'
 import Promise from 'bluebird'
-import samanage from '../samanage/mmbu-api.js'
 
 // consts for intent map
 const GOOGLE_ASSISTANT_WELCOME = 'input.welcome'
