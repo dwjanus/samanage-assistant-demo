@@ -31,6 +31,7 @@
     "npm": "3.10.6"
   },
   "dependencies": {
+    "actions-on-google": "^1.1.1",
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
     "babel-plugin-transform-async-to-generator": "^6.16.0",
