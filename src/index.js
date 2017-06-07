@@ -3,10 +3,6 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import path from 'path'
 import config from './config.js'
-
-// for now we will manually change this between ebu and mmbu to test the different
-// functionalities. Later we can probably make the welcome intent ask the user what
-// version of Samanage they are in and save the user type to their document in the db
 import samanageAssistant from './assistant-handler.js'
 
 const app = express()
@@ -30,7 +26,7 @@ app.post('/actions', (request, response) => {
   console.log('--> /actions Webhook Received')
   console.log(`\nRequest headers: ${util.inspect(request.headers)}\nRequest body:\n${util.inspect(request.body)}`)
   const assistant = new ApiAiApp({ request, response })
-  samanageAssistant(assistant, user)
+  samanageAssistant(assistant)
 })
 
 const server = app.listen(app.get('port'), () => {

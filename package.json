@@ -1,5 +1,5 @@
 {
-  "name": "samanage-assistant",
+  "name": "samanage-assistant-demo",
   "version": "1.0.0",
   "description": "Demo of the Google Assistant integration for Samanage Service Desk",
   "main": "index.js",
