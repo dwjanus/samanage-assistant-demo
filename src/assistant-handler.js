@@ -49,8 +49,8 @@ const incidentIntent = (app) => {
 
 const incidentSupportIntent = (app) => {
   console.log('--> incidentSupport intent called')
-  app.ask('I\'ve found that multiple users have reported a similar issue. Would you like me to submit ' +
-          'a support ticket on your behalf?')
+  app.ask('<speak xml:lang="en-US"><break time="3000ms"/>' +
+    'I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?</speak>')
 }
 
 const incidentSubmitIntent = (app) => {
