@@ -24,7 +24,8 @@ app.get('/', (request, response) => {
 
 app.post('/actions', (request, response) => {
   console.log('--> /actions Webhook Received')
-  console.log(`\nRequest headers: ${util.inspect(request.headers)}\nRequest body:\n${util.inspect(request.body)}`)
+  console.log(`Request body:\n${util.inspect(request.body)}\n`)
+  console.log(`Request contexts:\n${util.inspect(request.body.result.contexts)}`)
   const assistant = new ApiAiApp({ request, response })
   samanageAssistant(assistant)
 })
