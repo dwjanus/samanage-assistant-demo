@@ -47,8 +47,9 @@ const incidentIntent = (app) => {
             'a support ticket on your behalf?')
     .toString()
   console.log(`speech:\n${speech}`)
-  const response = app.buildSimpleResponse(speech)
-  app.ask(response)
+  // const response = app.buildSimpleResponse(speech)
+  // app.ask(response)
+  app.ask('<speak xml:lang="en-US">I am sorry to hear that, let me look into this problem<break time="2000ms"/>I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?</speak>')
 }
 
 // const incidentIntent = (app) => {
