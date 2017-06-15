@@ -46,8 +46,8 @@ const incidentIntent = (app) => {
     .say('I\'ve found that multiple users have reported a similar issue. Would you like me to submit ' +
             'a support ticket on your behalf?')
     .toString()
-  console.log(`speech:\n${util.inspect(speech)}`)
-  app.ask(speech)
+  console.log(`speech:\n${speech}`)
+  app.tell(speech)
 }
 
 // const incidentIntent = (app) => {
