@@ -98,9 +98,8 @@ export default ((app) => {
   const action = actionMap.get(app.getIntent())
   console.log(`action: ${util.inspect(action)}`)
   const promisedAction = Promise.promisify(action)
-  promisedAction(app).then((result) => {
-    console.log(`--> promisedAction fulfilled\nResult:\n${util.inspect(result)}`)
-    app.ask(result)
+  return promisedAction(app).then(() => {
+    console.log('--> promisedAction fulfilled')
   })
   .catch((err) => {
     console.log(err)
