@@ -39,7 +39,6 @@ const specialistHealthBenefitIntent = (app) => {
 
 const incidentIntent = (app) => {
   console.log('--> incident intent called')
-  console.log(`app:\n${util.inspect(app)}`)
   app.ask('I\'m sorry to hear that, let me look into this problem and I will get back to you in a minute.',
     ['I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?'])
 
@@ -49,7 +48,7 @@ const incidentIntent = (app) => {
 
 const incidentSupportIntent = (app) => {
   console.log('--> incidentSupport intent called')
-  app.ask('<speak xml:lang="en-US"><break time="3000ms"/>' +
+  app.ask('<speak xml:lang="en-US"><break time="5s"/>' +
     'I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?</speak>')
 }
 
