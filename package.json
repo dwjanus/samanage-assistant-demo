@@ -53,7 +53,8 @@
     "express": "^4.15.2",
     "express-http-proxy": "^0.6.0",
     "https": "^1.0.0",
-    "lodash": "^4.6.1"
+    "lodash": "^4.6.1",
+    "ssml": "0.0.4"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
