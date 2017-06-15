@@ -39,6 +39,7 @@ const specialistHealthBenefitIntent = (app) => {
 
 const incidentIntent = (app) => {
   console.log('--> incident intent called')
+  console.log(`app:\n${util.inspect(app)}`)
   app.ask('I\'m sorry to hear that, let me look into this problem and I will get back to you in a minute.',
     ['I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?'])
 
@@ -78,7 +79,7 @@ const incidentWelcomeIntent = (app) => {
 
 const incidentFollowUpIntent = (app) => {
   console.log('--> incidentFollowUp intent called')
-  app.ask('Excellent, I am closing your ticket now. Is there anything else I can do for you?')
+  app.ask('Excellent! I am closing your ticket now. Is there anything else I can do for you?')
 }
 
 const convoEndIntent = (app) => {
