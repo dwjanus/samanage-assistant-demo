@@ -47,7 +47,8 @@ const incidentIntent = (app) => {
             'a support ticket on your behalf?')
     .toString()
   console.log(`speech:\n${speech}`)
-  app.ask(`${speech}`)
+  const response = app.buildSimpleResponse(speech)
+  app.ask(response)
 }
 
 // const incidentIntent = (app) => {
