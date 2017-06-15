@@ -22,15 +22,15 @@ const welcomeIntent = (app) => {
 const benefitIntent = (app) => {
   console.log('--> benefit intent called')
   // app.ask('Certainly! Would you like to know about your medical, 401k, or another benefit?')
-  app.askWithList(app.buildRichResponse()
+  app.askWithCarousel(app.buildRichResponse()
     .addSimpleResponse('Certainly! If what you are looking for is not listed below simply tell me what you need')
     .addSuggestions(
       ['Dental', 'Life', 'Tax Forms']),
-    app.buildList('Most frequently searched information on Employee Benefits')
+    app.buildCarousel('Most frequently searched information on Employee Benefits')
     .addItems(app.buildOptionItem('Health', ['medical', 'health', 'health benefits'])
       .setTitle('Medical')
       .setDescription('Details about your health insurance policy')
-      .setImage('https://samanage-assistant-demo.herokuapp.com/public/images/healthcare.jpg', 'health')
+      .setImage('https://samanage-assistant-demo.herokuapp.com/images/healthcare.jpg', 'health')
     ) // add a .setImage after this works
     .addItems(app.buildOptionItem('Retirement', ['retirement', '401k'])
       .setTitle('Retirement')
@@ -40,7 +40,7 @@ const benefitIntent = (app) => {
     .addItems(app.buildOptionItem('Time Off', ['time off', 'time-off', 'pto'])
       .setTitle('Time Off')
       .setDescription('Request time off and view information on your vacation and sick leave')
-      .setImage('https://samanage-assistant-demo.herokuapp.com/images/vacation.jpg', 'time off')
+      .setImage('https://samanage-assistant-demo.herokuapp.com/images/vacation.jpeg', 'time off')
     )
   )
 }
