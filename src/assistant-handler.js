@@ -27,7 +27,7 @@ const benefitIntent = (app) => {
     .addSuggestions(
       ['Dental', 'Life', 'Tax Forms']),
     app.buildCarousel('Most frequently searched information on Employee Benefits')
-    .addItems(app.buildOptionItem('Health', ['medical', 'health', 'health benefits'])
+    .addItems(app.buildOptionItem(HEALTH, ['medical', 'health', 'health benefits'])
       .setTitle('Medical')
       .setDescription('Details about your health insurance policy')
       .setImage('https://samanage-assistant-demo.herokuapp.com/images/healthcare.jpg', 'health')
