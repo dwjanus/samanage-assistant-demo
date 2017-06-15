@@ -21,7 +21,22 @@ const welcomeIntent = (app) => {
 
 const benefitIntent = (app) => {
   console.log('--> benefit intent called')
-  app.ask('Certainly! Would you like to know about your medical, 401k, or another benefit?')
+  // app.ask('Certainly! Would you like to know about your medical, 401k, or another benefit?')
+  app.askWithList(app.buildRichResponse()
+    .addSimpleResponse('Certainly!')
+    .addSuggestions(
+      ['If what you\'re looking for is\'nt listed simply tell me what you want to know more about']),
+    app.buildList('Most frequently searched information on Employee Benefits')
+    .addItems(app.buildOptionItem('Health', ['medical', 'health', 'health benefits'])
+      .setTitle('Medical')
+      .setDescription('Information on your medical insurance plan')) // add a .setImage after this works
+    .addItems(app.buildOptionItem('Retirement', ['retirement', '401k'])
+      .setTitle('Retirement')
+      .setDescription('Details about your 401k'))
+    .addItems(app.buildOptionItem('Dental', ['dental', 'teeth'])
+      .setTitle('Dental')
+      .setDescription('Information on your dental coverage'))
+    )
 }
 
 const healthBenefitIntent = (app) => {
