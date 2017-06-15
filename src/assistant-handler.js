@@ -46,7 +46,6 @@ const incidentIntent = (app) => {
     .say('I\'ve found that multiple users have reported a similar issue. Would you like me to submit ' +
             'a support ticket on your behalf?')
     .toString({ pretty: true })
-  app.setContext('incident-support')
   app.ask(speech)
 }
 
