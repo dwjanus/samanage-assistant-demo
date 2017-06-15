@@ -33,9 +33,9 @@ const healthBenefitIntent = (app) => {
 const specialistHealthBenefitIntent = (app) => {
   console.log('--> specialistHealthBenefit intent called')
   // may have to use ssml to create delay event
-  app.tell('Yes, your plan covers chiropractors and other specialists with a $75 co-pay for office visits. ' +
-          'Additionally co-pays for generic prescriptions are $15')
-  app.ask('Is there anything else I can help you with?')
+  app.ask('Yes, your plan covers chiropractors and other specialists with a $75 co-pay for office visits. ' +
+          'Additionally co-pays for generic prescriptions are $15.\nIs there anything else I can help you with?')
+  // app.ask('Is there anything else I can help you with?')
 }
 
 const incidentIntent = (app) => {
