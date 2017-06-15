@@ -1,5 +1,4 @@
 import util from 'util'
-import Ssml from 'ssml'
 import Promise from 'bluebird'
 
 // consts for intent map
@@ -40,16 +39,11 @@ const specialistHealthBenefitIntent = (app) => {
 
 const incidentIntent = (app) => {
   console.log('--> incident intent called')
-  const speech = new Ssml()
-  speech.say('I\'m sorry to hear that, let me look into this problem')
-    .break(2000)
-    .say('I\'ve found that multiple users have reported a similar issue. Would you like me to submit ' +
-            'a support ticket on your behalf?')
-    .toString()
-  console.log(`speech:\n${speech}`)
-  // const response = app.buildSimpleResponse(speech)
-  // app.ask(response)
-  app.ask('<speak xml:lang="en-US">I am sorry to hear that, let me look into this problem<break time="2000ms"/>I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?</speak>')
+  app.ask('I\'m sorry to hear that, let me look into this problem.',
+    ['I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?'])
+
+  // app.ask('<speak xml:lang="en-US">I am sorry to hear that, let me look into this problem<break time="2000ms"/>' +
+  // 'I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?</speak>')
 }
 
 // const incidentIntent = (app) => {
