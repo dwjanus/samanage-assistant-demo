@@ -7,7 +7,7 @@ const BENEFITS = 'input.benefits'
 const HEALTH = 'benefits.health'
 const SPECIALIST = 'health.specialist'
 const INCIDENT = 'input.incident'
-// const SUPPORT = 'incident.support'
+const SUPPORT = 'incident.support'
 const SUBMIT = 'incident.submit'
 const UPDATE = 'incident.update'
 const INCIDENT_WELCOME = 'incident.welcome'
@@ -47,17 +47,11 @@ const incidentIntent = (app) => {
   // 'I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?</speak>')
 }
 
-// const incidentIntent = (app) => {
-//   console.log('--> incident intent called')
-//   console.log(`${util.inspect(app)}`)
-//   app.ask('I\'m sorry to hear that, let me look into this problem')
-// }
-//
-// const incidentSupportIntent = (app) => {
-//   console.log('--> incidentSupport intent called')
-//   app.ask('I\'ve found that multiple users have reported a similar issue. Would you like me to submit ' +
-//           'a support ticket on your behalf?')
-// }
+const incidentSupportIntent = (app) => {
+  console.log('--> incidentSupport intent called')
+  app.ask('I\'ve found that multiple users have reported a similar issue. Would you like me to submit ' +
+          'a support ticket on your behalf?')
+}
 
 const incidentSubmitIntent = (app) => {
   console.log('--> incidentSubmit intent called')
@@ -93,7 +87,7 @@ actionMap.set(BENEFITS, benefitIntent)
 actionMap.set(HEALTH, healthBenefitIntent)
 actionMap.set(SPECIALIST, specialistHealthBenefitIntent)
 actionMap.set(INCIDENT, incidentIntent)
-// actionMap.set(SUPPORT, incidentSupportIntent)
+actionMap.set(SUPPORT, incidentSupportIntent)
 actionMap.set(SUBMIT, incidentSubmitIntent)
 actionMap.set(UPDATE, incidentUpdateIntent)
 actionMap.set(INCIDENT_WELCOME, incidentWelcomeIntent)
