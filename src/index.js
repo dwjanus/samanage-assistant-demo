@@ -16,7 +16,6 @@ if (!port) {
 app.set('port', port)
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json({ type: 'application/json' }))
-app.use(bodyParser.xml())
 app.use(express.static(path.join(__dirname, '../public')))
 
 app.get('/', (request, response) => {
