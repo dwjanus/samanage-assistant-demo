@@ -40,7 +40,7 @@ const specialistHealthBenefitIntent = (app) => {
 
 const incidentIntent = (app) => {
   console.log('--> incident intent called')
-  app.tell('I\'m sorry to hear that, let me look into this problem')
+  app.ask('I\'m sorry to hear that, let me look into this problem')
   app.setContext('incident-support')
 }
 
