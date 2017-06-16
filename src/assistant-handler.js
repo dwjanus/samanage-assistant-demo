@@ -80,7 +80,7 @@ const specialistHealthBenefitIntent = (app) => {
 
 const incidentIntent = (app) => {
   console.log('--> incident intent called')
-  app.ask('<speak xml:lang="en-US">I\'m sorry to hear that, <break time="500ms"/>let me look into this problem and I will get back to you in a minute.',
+  app.ask('<speak xml:lang="en-US">I\'m sorry to hear that, <break time="500ms"/>let me look into this problem and I will get back to you in a minute.</speak>',
     ['I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?'])
 
   // app.ask('<speak xml:lang="en-US">I am sorry to hear that, let me look into this problem<break time="2000ms"/>' +
@@ -102,7 +102,7 @@ const incidentSubmitIntent = (app) => {
 // Maybe make an intent with the trigger phrase "Talk to Sam"? (not sure if Google will like this...)
 const incidentUpdateIntent = (app) => {
   console.log('--> incidentUpdate intent called')
-  app.ask('<speak xml:lang="en-US">Your ticket information has been sent to <say-as interpret-as="telephone">+1 919-586-1684</say-as></speak>')
+  app.ask('<speak xml:lang="en-US">Your ticket information has been sent to <say-as interpret-as="telephone">919-586-1684</say-as></speak>')
   // this is where we send the text message
 }
 
