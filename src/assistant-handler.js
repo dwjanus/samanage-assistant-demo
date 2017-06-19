@@ -27,7 +27,7 @@ const benefitIntent = (app) => {
     .addSuggestions(
       ['Dental', 'Life', 'Tax Forms']),
     app.buildCarousel('Employee Benefits')
-    .addItems(app.buildOptionItem(HEALTH, ['medical', 'health', 'health benefits'])
+    .addItems(app.buildOptionItem(HEALTH, ['Medical', 'health', 'health benefits', 'medical'])
       .setTitle('Medical')
       .setDescription('Details about your health insurance policy')
       .setImage('https://samanage-assistant-demo.herokuapp.com/images/healthcare.jpg', 'health')
@@ -56,35 +56,30 @@ const healthBenefitIntent = (app) => {
     .addItems(app.buildOptionItem('Doctor', ['doctor'])
       .setTitle('Find a doctor')
       .setDescription('Find specialists and primary care physicians covered under your plan')
-      // .setImage('https://samanage-assistant-demo.herokuapp.com/images/healthcare.jpg', 'health')
+      .setImage('https://samanage-assistant-demo.herokuapp.com/images/doctoricon.jpg', 'health')
     )
     .addItems(app.buildOptionItem(SPECIALIST, ['chiropractors', 'chiropractor', 'specialist'])
       .setTitle('Co-Pays')
       .setDescription('View details on your co-pay amounts')
-      // .setImage('https://samanage-assistant-demo.herokuapp.com/images/vacation.jpeg', 'time off')
+      .setImage('https://samanage-assistant-demo.herokuapp.com/images/copay.png', 'time off')
     )
     .addItems(app.buildOptionItem('Details', ['coverage', 'details'])
       .setTitle('Details')
       .setDescription('View a comprehensive description of your insurance policy')
-      // .setImage('https://samanage-assistant-demo.herokuapp.com/images/retired.jpeg', 'retirement')
+      .setImage('https://samanage-assistant-demo.herokuapp.com/images/details.png', 'retirement')
     )
   )
 }
 
 const specialistHealthBenefitIntent = (app) => {
   console.log('--> specialistHealthBenefit intent called')
-  // may have to use ssml to create delay event
   app.ask('<speak xml:lang="en-US">Yes, your plan covers chiropractors and other specialists with a $75 co-pay for office visits. ' +
           'Additionally co-pays for generic prescriptions are $15.\n<break time="1s"/>Is there anything else I can help you with?</speak>')
 }
 
 const incidentIntent = (app) => {
   console.log('--> incident intent called')
-  app.ask('<speak xml:lang="en-US">I\'m sorry to hear that, <break time="500ms"/>let me look into this problem and I will get back to you in a minute.</speak>',
-    ['I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?'])
-
-  // app.ask('<speak xml:lang="en-US">I am sorry to hear that, let me look into this problem<break time="2000ms"/>' +
-  // 'I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?</speak>')
+  app.ask('<speak xml:lang="en-US">I\'m sorry to hear that, <break time="500ms"/>let me look into this problem and I will get back to you in a minute.</speak>')
 }
 
 const incidentSupportIntent = (app) => {
@@ -95,11 +90,9 @@ const incidentSupportIntent = (app) => {
 
 const incidentSubmitIntent = (app) => {
   console.log('--> incidentSubmit intent called')
-  app.ask('Okay, I have submitted your ticket. Would you like to be notified via text message?')
+  app.ask('<speak xml:lang="en-US">Okay,<break time="500ms"/> I have submitted your ticket. Would you like to be notified via text message?</speak>')
 }
 
-// gonna need to do some finagling with contexts/actions to get multiple welcome intents
-// Maybe make an intent with the trigger phrase "Talk to Sam"? (not sure if Google will like this...)
 const incidentUpdateIntent = (app) => {
   console.log('--> incidentUpdate intent called')
   app.ask('<speak xml:lang="en-US">Your ticket information has been sent to <say-as interpret-as="telephone">919-586-1684</say-as></speak>')
@@ -118,7 +111,7 @@ const incidentFollowUpIntent = (app) => {
 
 const convoEndIntent = (app) => {
   console.log('--> convoEnd intent called')
-  app.tell('Right on, let me know if you need anything else!')
+  app.tell('<speak xml:lang="en-US">Right on,<break time="500ms"/> let me know if you need anything else!</speak>')
 }
 
 const actionMap = new Map()
