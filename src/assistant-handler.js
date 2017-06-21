@@ -6,6 +6,7 @@ const GOOGLE_ASSISTANT_WELCOME = 'input.welcome'
 const BENEFITS = 'input.benefits'
 const HEALTH = 'benefits.health'
 const SPECIALIST = 'health.specialist'
+const BENEFIT_CLOSE = 'benefits.close'
 const INCIDENT = 'input.incident'
 const SUPPORT = 'incident.support'
 const SUBMIT = 'incident.submit'
@@ -74,7 +75,12 @@ const healthBenefitIntent = (app) => {
 const specialistHealthBenefitIntent = (app) => {
   console.log('--> specialistHealthBenefit intent called')
   app.ask('<speak xml:lang="en-US">Yes, your plan covers chiropractors and other specialists with a $75 co-pay for office visits. ' +
-          'Additionally co-pays for generic prescriptions are $15.\n<break time="1s"/>Is there anything else I can help you with?</speak>')
+          'Additionally co-pays for generic prescriptions are $15.\n<break time="1s"/>Would you like me to email you this information?</speak>')
+}
+
+const benefitCloseIntent = (app) => {
+  console.log('--> benefitClose intent called')
+  app.ask('Is there anything else I can help you with?')
 }
 
 const incidentIntent = (app) => {
@@ -119,6 +125,7 @@ actionMap.set(GOOGLE_ASSISTANT_WELCOME, welcomeIntent)
 actionMap.set(BENEFITS, benefitIntent)
 actionMap.set(HEALTH, healthBenefitIntent)
 actionMap.set(SPECIALIST, specialistHealthBenefitIntent)
+actionMap.set(BENEFIT_CLOSE, benefitCloseIntent)
 actionMap.set(INCIDENT, incidentIntent)
 actionMap.set(SUPPORT, incidentSupportIntent)
 actionMap.set(SUBMIT, incidentSubmitIntent)
