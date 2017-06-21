@@ -1,5 +1,6 @@
 import util from 'util'
 import Promise from 'bluebird'
+import request from 'request'
 
 // consts for intent map
 const GOOGLE_ASSISTANT_WELCOME = 'input.welcome'
@@ -103,6 +104,26 @@ const incidentUpdateIntent = (app) => {
   console.log('--> incidentUpdate intent called')
   app.ask('<speak xml:lang="en-US">Your ticket information has been sent to <say-as interpret-as="telephone">919-586-1684</say-as></speak>')
   // this is where we send the text message
+  const countryCode = '+1'
+  const mobileNumber = '9195861684'
+  const message = 'Howdy Devin! Your support ticket: S45876 has been submitted. Please visit www.servicedesk.com/S45876 for more details'
+  request.post({
+    headers: {
+      'content-type': 'application/x-www-form-urlencoded',
+      'Accepts': 'application/json'
+    },
+    url: `${process.env.BLOWERIO_URL}/messages`,
+    form: {
+      to: countryCode + mobileNumber,
+      message: message
+    }
+  }, (err, response, body) => {
+    if (!err && response.statusCode === 201) console.log('----> SMS Message Sent!')
+    else {
+      const apiResult = JSON.parse(body)
+      console.log(`--! Error: ${apiResult.message}`)
+    }
+  })
 }
 
 const incidentWelcomeIntent = (app) => {
