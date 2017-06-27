@@ -107,7 +107,8 @@ const incidentUpdateIntent = (app) => {
   // this is where we send the text message
   const countryCode = '+1'
   const mobileNumber = '9195861684'
-  const message = `Howdy Devin! Your support ticket: S45876 has been submitted. Please visit <a href="#">this link</a> for more details`
+  const thislink = 'this link'
+  const message = `Howdy Devin! Your support ticket: S45876 has been submitted. Please visit ${thislink.link('http://www.google.com')} for more details`
   request.post({
     headers: {
       'content-type': 'application/x-www-form-urlencoded',
