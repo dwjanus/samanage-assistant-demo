@@ -8,6 +8,7 @@ const BENEFITS = 'input.benefits'
 const HEALTH = 'benefits.health'
 const SPECIALIST = 'health.specialist'
 const BENEFIT_CLOSE = 'benefits.close'
+const INCIDENT_START = 'incident.start'
 const INCIDENT = 'input.incident'
 const SUPPORT = 'incident.support'
 const SUBMIT = 'incident.submit'
@@ -81,7 +82,12 @@ const specialistHealthBenefitIntent = (app) => {
 
 const benefitCloseIntent = (app) => {
   console.log('--> benefitClose intent called')
-  app.ask('Is there anything else I can help you with?')
+  app.ask('Awesome! I\'m here if you have any other questions.')
+}
+
+const incidentStartIntent = (app) => {
+  console.log('--> incident start intent called')
+  app.ask('<speak xml:lang="en-US">Hi Devin,<break time="500ms"/> did you have more questions about your benefits?</speak>')
 }
 
 const incidentIntent = (app) => {
@@ -108,7 +114,7 @@ const incidentUpdateIntent = (app) => {
   const countryCode = '+1'
   const mobileNumber = '9195861684'
   const thislink = 'this link'
-  const message = `Howdy Devin! Your support ticket: S45876 has been submitted. Please visit ${thislink.link('http://www.google.com')} for more details`
+  const message = `Howdy Devin! Your support ticket: S45876 has been submitted. Please visit www.support.com/S45876 for more details`
   request.post({
     headers: {
       'content-type': 'application/x-www-form-urlencoded',
@@ -149,6 +155,7 @@ actionMap.set(BENEFITS, benefitIntent)
 actionMap.set(HEALTH, healthBenefitIntent)
 actionMap.set(SPECIALIST, specialistHealthBenefitIntent)
 actionMap.set(BENEFIT_CLOSE, benefitCloseIntent)
+actionMap.set(INCIDENT_START, incidentStartIntent)
 actionMap.set(INCIDENT, incidentIntent)
 actionMap.set(SUPPORT, incidentSupportIntent)
 actionMap.set(SUBMIT, incidentSubmitIntent)
