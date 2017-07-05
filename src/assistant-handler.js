@@ -92,14 +92,15 @@ const incidentStartIntent = (app) => {
 
 const incidentIntent = (app) => {
   console.log('--> incident intent called')
-  app.ask('<speak xml:lang="en-US">I\'m sorry to hear that, <break time="500ms"/>let me look into this problem and I will get back to you in a minute.</speak>')
+  app.ask('<speak xml:lang="en-US">I\'m sorry to hear that, <break time="500ms"/>There are no related knowledge base articles, would you like me to ' +
+  'submit a support ticket?</speak>')
 }
 
-const incidentSupportIntent = (app) => {
-  console.log('--> incidentSupport intent called')
-  app.ask('<speak xml:lang="en-US"><break time="500ms"/>' +
-    'I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?</speak>')
-}
+// const incidentSupportIntent = (app) => {
+//   console.log('--> incidentSupport intent called')
+//   app.ask('<speak xml:lang="en-US"><break time="500ms"/>' +
+//     'I\'ve found that multiple users have reported a similar issue. Would you like me to submit a support ticket on your behalf?</speak>')
+// }
 
 const incidentSubmitIntent = (app) => {
   console.log('--> incidentSubmit intent called')
