@@ -114,8 +114,7 @@ const incidentUpdateIntent = (app) => {
   // this is where we send the text message
   const countryCode = '+1'
   const mobileNumber = '9195861684'
-  const thislink = 'this link'
-  const message = `Howdy Devin! Your support ticket: S45876 has been submitted. Please visit www.support.com/S45876 for more details`
+  const message = 'Howdy Devin! Your support ticket: S45876 has been submitted. Please visit www.support.com/S45876 for more details'
   request.post({
     headers: {
       'content-type': 'application/x-www-form-urlencoded',
@@ -158,7 +157,7 @@ actionMap.set(SPECIALIST, specialistHealthBenefitIntent)
 actionMap.set(BENEFIT_CLOSE, benefitCloseIntent)
 actionMap.set(INCIDENT_START, incidentStartIntent)
 actionMap.set(INCIDENT, incidentIntent)
-actionMap.set(SUPPORT, incidentSupportIntent)
+// actionMap.set(SUPPORT, incidentSupportIntent)
 actionMap.set(SUBMIT, incidentSubmitIntent)
 actionMap.set(UPDATE, incidentUpdateIntent)
 actionMap.set(INCIDENT_WELCOME, incidentWelcomeIntent)
