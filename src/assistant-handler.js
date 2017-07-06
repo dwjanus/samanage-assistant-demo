@@ -10,7 +10,7 @@ const SPECIALIST = 'health.specialist'
 const BENEFIT_CLOSE = 'benefits.close'
 const INCIDENT_START = 'incident.start'
 const INCIDENT = 'input.incident'
-const SUPPORT = 'incident.support'
+// const SUPPORT = 'incident.support'
 const SUBMIT = 'incident.submit'
 const UPDATE = 'incident.update'
 const INCIDENT_WELCOME = 'incident.welcome'
@@ -52,7 +52,7 @@ const healthBenefitIntent = (app) => {
   console.log('--> healthBenefit intent called')
   // app.ask('Ok, do you want me to find a doctor covered under your plan or would you like help with something else?')
   app.askWithList(app.buildRichResponse()
-    .addSimpleResponse('Ok, do you need help finding a doctor or something else?')
+    .addSimpleResponse('<speak xml:lang="en-US">Ok, do you need help finding a doctor <break time="500ms"/>or something else?</speak>')
     .addSuggestions(
       ['Other']),
     app.buildList('Medical Benefits')
@@ -92,8 +92,8 @@ const incidentStartIntent = (app) => {
 
 const incidentIntent = (app) => {
   console.log('--> incident intent called')
-  app.ask('<speak xml:lang="en-US">I\'m sorry to hear that, <break time="500ms"/>There are no related knowledge base articles, would you like me to ' +
-  'submit a support ticket?</speak>')
+  app.ask('<speak xml:lang="en-US">I\'m sorry to hear that, <break time="500ms"/>currently there are no related knowledge base articles on that. Would you ' +
+  'like me to submit a support ticket?</speak>')
 }
 
 // const incidentSupportIntent = (app) => {
