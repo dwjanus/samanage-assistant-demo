@@ -77,7 +77,7 @@ const healthBenefitIntent = (app) => {
 const specialistHealthBenefitIntent = (app) => {
   console.log('--> specialistHealthBenefit intent called')
   app.ask('<speak xml:lang="en-US">Yes, your plan covers chiropractors and other specialists with a $75 co-pay for office visits. ' +
-          'Additionally co-pays for generic prescriptions are $15.\n<break time="1s"/>Would you like me to email you this information?</speak>')
+          'Additionally your co-pay for generic prescriptions is $15.\n<break time="1s"/>Would you like me to email you this information?</speak>')
 }
 
 const benefitCloseIntent = (app) => {
